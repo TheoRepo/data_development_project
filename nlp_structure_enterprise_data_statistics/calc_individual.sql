@@ -122,4 +122,6 @@ where
     indicator != ''
     and indicator != '无'
     and indicator is not null 
+order by
+    block, indicator
 ;

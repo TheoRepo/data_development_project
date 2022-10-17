@@ -116,7 +116,7 @@ from
         select
             SHXYDM,
             case 
-                when REGCAP is not null then cast(REGCAP/10000 as string)
+                when REGCAP is not null then cast(FLOOR(REGCAP/10000) as string)
                 else cast(REGCAP as string)
             end as capital
         from
@@ -144,4 +144,6 @@ where
     indicator != ''
     and indicator != '无'
     and indicator is not null 
+order by
+    block, indicator
 ;

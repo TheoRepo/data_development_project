@@ -6,6 +6,19 @@
 nohup python dataflow.py > dataflow.log 2>&1 &
 ```
 
+## 任务调度
+1. 检查crontab服务是否启动
+```bash
+service crond status
+```
+
+2. 修改用户的配置文件
+用`crontab -e`命令在最后添加一行
+```bash
+# 每天00点02分执行数据流
+02 00 * * * nohup /usr/local/python3/bin/python /home/ds/qianyu/nlp_structure_enterprise_data_statistics/dataflow.py >> "/home/ds/qianyu/log/enterprise_big_screen_$(date +"\%Y-\%m-\%d").log" 2>&1 & 
+```
+
 ## 开发流程
 1. 在dataworks或者beeline上完成sql开发
 2. 将sql代码保存在代码仓库的主路径，使用dataflow.py脚本驱动sql运行
@@ -21,6 +34,3 @@ nohup python dataflow.py > dataflow.log 2>&1 &
 - 企业数据大屏原始统计数据（表结构设计）.pdf
 - 企业数据大屏原始统计数据（枚举值明细）.xlsx
 
-## 优化方向
-目前使用beeline的API，运行SQL
-后续可以尝试使用spark_sql的API
