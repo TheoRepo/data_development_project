@@ -1,0 +1,2 @@
+source_table = "nlp_online.insurance_txt_apply" # 数据源
+target_table = "nlp_dev.insurance_txt_apply_white_list" # 结果表

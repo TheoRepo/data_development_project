@@ -1,0 +1,2 @@
+source_table = "preprocess.ds_txt_final" # 数据源底层表
+target_table = "dwb.virtual_id_txt_ner_v1" # 规则实体结构化目标表

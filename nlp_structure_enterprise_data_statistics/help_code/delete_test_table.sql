@@ -1,0 +1,6 @@
+drop table if exists dwb_ent.enterprise_large_screen_enterprise_indicators;
+drop table if exists dwb_ent.enterprise_large_screen_individual_indicators;
+drop table if exists dwb_ent.enterprise_large_screen_new_enterprise;
+drop table if exists dwb_ent.enterprise_large_screen_new_individual;
+drop table if exists dwb_ent.enterprise_large_screen_enterprise_change;
+drop table if exists dwb_ent.enterprise_large_screen_individual_change;
