@@ -15,8 +15,7 @@ service crond status
 2. 修改用户的配置文件
 用`crontab -e`命令在最后添加一行
 ```bash
-# 每天00点02分执行数据流
-02 00 * * * nohup /usr/local/python3/bin/python /home/ds/qianyu/nlp_structure_enterprise_data_statistics/dataflow.py >> "/home/ds/qianyu/log/enterprise_big_screen_$(date +"\%Y-\%m-\%d").log" 2>&1 & 
+00 02 * * * sh /home/ds/qianyu/nlp_structure_enterprise_data_statistics/run.sh
 ```
 
 ## 开发流程
