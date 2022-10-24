@@ -1,7 +1,7 @@
 -- 代码测试通过
 -- 市场主体动态信息——企业成立信息更新
 
-insert overwrite table dwb_ent.enterprise_large_screen_new_enterprise partition (dt)
+insert overwrite table dws_ent.enterprise_large_screen_new_enterprise partition (dt)
 select
     entname,
     shxydm,
@@ -19,7 +19,7 @@ limit 100
 ;
 
 -- 市场主体动态信息——个体户成立信息更新
-insert overwrite table dwb_ent.enterprise_large_screen_new_individual partition (dt)
+insert overwrite table dws_ent.enterprise_large_screen_new_individual partition (dt)
 select
     entname,
     uniscid,
@@ -37,7 +37,7 @@ limit 100
 ;
 
 -- 市场主体动态信息——企业变更信息更新
-insert overwrite table dwb_ent.enterprise_large_screen_enterprise_change partition (dt)
+insert overwrite table dws_ent.enterprise_large_screen_enterprise_change partition (dt)
 select
     entname,
     altitem,
@@ -54,7 +54,7 @@ limit 100
 ;
 
 -- 市场主体动态信息——个体户变更信息更新
-insert overwrite table dwb_ent.enterprise_large_screen_individual_change partition (dt)
+insert overwrite table dws_ent.enterprise_large_screen_individual_change partition (dt)
 select
     entname,
     uniscid,

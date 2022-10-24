@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS dwb_ent.enterprise_large_screen_enterprise_indicators
+CREATE TABLE IF NOT EXISTS dws_ent.enterprise_large_screen_enterprise_indicators
 (
     block String COMMENT '板块',
     indicator String COMMENT '统计指标',
@@ -12,9 +12,9 @@ ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
 STORED AS orcfile;
 
 
-CREATE TABLE IF NOT EXISTS dwb_ent.enterprise_large_screen_individual_indicators
+CREATE TABLE IF NOT EXISTS dws_ent.enterprise_large_screen_individual_indicators
 (
-    entity_type String COMMENT '统计主体',
+    block String COMMENT '板块',
     indicator String COMMENT '统计指标',
     cnt int COMMENT '统计结果'
 )   comment '个体户统计结果'
@@ -26,7 +26,7 @@ ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
 STORED AS orcfile;
 
 
-CREATE TABLE IF NOT EXISTS dwb_ent.enterprise_large_screen_new_enterprise
+CREATE TABLE IF NOT EXISTS dws_ent.enterprise_large_screen_new_enterprise
 (
     entname String COMMENT '企业名称',
     shxydm String COMMENT '统一社会信用代码',
@@ -43,7 +43,7 @@ ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
 STORED AS orcfile;
 
 
-CREATE TABLE IF NOT EXISTS dwb_ent.enterprise_large_screen_new_individual
+CREATE TABLE IF NOT EXISTS dws_ent.enterprise_large_screen_new_individual
 (
     entname String COMMENT '个体户名称',
     uniscid String COMMENT '统一社会信用代码',
@@ -60,7 +60,7 @@ ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
 STORED AS orcfile;
 
 
-CREATE TABLE IF NOT EXISTS dwb_ent.enterprise_large_screen_enterprise_change
+CREATE TABLE IF NOT EXISTS dws_ent.enterprise_large_screen_enterprise_change
 (
     entname String COMMENT '企业名称',
     altitem String COMMENT '变更事项',
@@ -76,7 +76,7 @@ ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
 STORED AS orcfile;
 
 
-CREATE TABLE IF NOT EXISTS dwb_ent.enterprise_large_screen_individual_change
+CREATE TABLE IF NOT EXISTS dws_ent.enterprise_large_screen_individual_change
 (
     entname String COMMENT '个体户名称',
     uniscid String COMMENT '统一社会信用代码',

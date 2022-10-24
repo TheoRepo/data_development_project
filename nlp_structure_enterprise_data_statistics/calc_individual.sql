@@ -2,7 +2,7 @@
 -- 把个体户的所有统计结果写到另一张表
 
 -- 个体户测试通过，跑数结果正确无误
-insert overwrite table dwb_ent.enterprise_large_screen_individual_indicators partition (dt)
+insert overwrite table dws_ent.enterprise_large_screen_individual_indicators partition (dt)
 select
     block,
     indicator,

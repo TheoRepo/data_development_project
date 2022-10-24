@@ -32,7 +32,7 @@ spark_sql_str = """/usr/local/spark-2.4.3-bin-hadoop2.7/bin/spark-sql --driver-m
     --conf spark.sql.shuffle.partitions=400 \
     --conf spark.sql.broadcastTimeout=1800 \
     --conf spark.maxRemoteBlockSizeFetchToMem=512m \
-    --name \"dwb_ent_qianyu\" \
+    --name \"dws_ent_qianyu\" \
     -e \"{}\"\n
 """
 
@@ -45,7 +45,9 @@ def one_line_sql_transformer(str):
     _sql_tmp_2 = tab_deleter.sub(' ', _sql_tmp_1)
     # 去掉多余的空格
     space_deleter = re.compile(r'\s+')
-    _sql = space_deleter.sub(' ', _sql_tmp_2)
+    _sql_tmp_3 = space_deleter.sub(' ', _sql_tmp_2)
+    # 将两个转义符替换成四个
+    _sql = _sql_tmp_3.replace(r"\\", r"\\\\" )
     return _sql
 
 def sql_to_shell(sql_file,shell_file,command_line):

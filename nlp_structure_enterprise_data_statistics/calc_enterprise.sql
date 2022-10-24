@@ -2,7 +2,7 @@
 -- 把企业的所有统计结果写到另一张表
 
 -- 企业测试通过,结果表数据有问题，在找原因
-insert overwrite table dwb_ent.enterprise_large_screen_enterprise_indicators partition (dt)
+insert overwrite table dws_ent.enterprise_large_screen_enterprise_indicators partition (dt)
 select
     block,
     indicator,
@@ -39,7 +39,7 @@ from
         -- 清洗脏数据
         select 
             SHXYDM,
-            regexp_replace(ENTTYPE, '\\([\\d]+\\)|\\(\\)', '') as entity_type
+            regexp_replace(ENTTYPE, '\\([\\d]+\\)', '') as entity_type
         from 
             ds_ent.ds_bus_register_info_fdt
         ) a
